@@ -20,7 +20,9 @@ OBTENIR VOTRE CHAT ID (pour recevoir les commandes) :
   2. Envoyer /start → il vous affiche votre ID
 """
 
+
 import logging
+import os
 import random
 import string
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
@@ -33,10 +35,10 @@ from telegram.ext import (
 # ⚙️  CONFIGURATION — À REMPLIR OBLIGATOIREMENT
 # ─────────────────────────────────────────────
 
-BOT_TOKEN = "VOTRE_TOKEN_BOTFATHER_ICI"
+BOT_TOKEN = os.environ.get("BOT_TOKEN")
 # Exemple : "7412345678:AAHxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 
-ADMIN_CHAT_ID = 123456789
+ADMIN_CHAT_ID = int(os.environ.get("ADMIN_CHAT_ID"))
 # Remplacez par votre vrai Chat ID (entier, pas une string)
 # Obtenez-le avec @userinfobot sur Telegram
 
